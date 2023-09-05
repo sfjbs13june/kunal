@@ -9,13 +9,13 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kunal.app</groupId>
-	<artifactId>docker-spring-app</artifactId>
+	<artifactId>docker-kinfo-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>docker-spring-app</name>
-	<description>First docker image</description>
+	<name>docker-kinfo-app</name>
+	<description>Docker project</description>
 	<properties>
 		<java.version>11</java.version>
-		<docker.image.prefix>kunal752</docker.image.prefix>
+		<docker.image.prefix>kunal7</docker.image.prefix>
 	</properties>
 	<dependencies>
 		<dependency>
