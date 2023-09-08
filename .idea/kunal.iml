@@ -2,7 +2,17 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/day01/simple-maven-app/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/day01/simple-maven-app/target" />
+      <excludeFolder url="file://$MODULE_DIR$/day02/first-microservice/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/day02/first-microservice/target" />
+      <excludeFolder url="file://$MODULE_DIR$/day02/kunal-web-microservice/kunal-web-microservice/target" />
+      <excludeFolder url="file://$MODULE_DIR$/day03/kunal-student-app/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/day03/kunal-student-app/target" />
+      <excludeFolder url="file://$MODULE_DIR$/day04/docker-kinfo-app/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/day04/docker-kinfo-app/target" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
