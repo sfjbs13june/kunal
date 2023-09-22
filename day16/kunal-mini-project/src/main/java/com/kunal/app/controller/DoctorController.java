@@ -6,23 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
-@Controller
+
+@RestController
 @RequestMapping(value = "/doctor")
 public class DoctorController {
 
     @Autowired
     AppointmentRepository appointmentRepository;
 
-    @GetMapping("/doctorappointment")
-    public @ResponseBody Iterable<Appointment> getAppointments(@RequestParam String doctorName){
-        return appointmentRepository.findAll();
+    @PostMapping("/save")
+    public Appointment saveAppointment(@RequestBody final Appointment appointment){
+        return appointmentRepository.save(appointment);
     }
 
-    @PostMapping("/save")
-    public @ResponseBody String saveAppointment(@RequestBody final Appointment appointment){
-        appointmentRepository.save(appointment);
-        return "Doctor appointment saved";
+    @GetMapping("/doctorappointment") public List<Appointment> getAppointment(@RequestParam String doctorName){
+       return appointmentRepository.findBydoctorName(doctorName);
     }
 
 }

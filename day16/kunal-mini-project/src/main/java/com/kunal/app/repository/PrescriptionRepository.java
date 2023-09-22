@@ -1,7 +1,12 @@
 package com.kunal.app.repository;
 
+import com.kunal.app.model.Appointment;
 import com.kunal.app.model.Prescription;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface PrescriptionRepository extends CrudRepository <Prescription,Integer> {
+import java.util.List;
+
+public interface PrescriptionRepository extends MongoRepository<Prescription,String> {
+    public Prescription save(Prescription prescription);
+    public List<Prescription> findBypatientName(String patientName);
 }

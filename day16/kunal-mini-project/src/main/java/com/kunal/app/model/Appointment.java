@@ -1,34 +1,41 @@
 package com.kunal.app.model;
 
-import javax.persistence.*;
 
-@Entity
+import org.springframework.data.annotation.Id;
+
 public class Appointment {
+
     @Id
-    @GeneratedValue
-    @Column(name = "appointmentId")
-    private int appointmentID;
-
-    @Column(name = "patientName")
+    private String appointmentID;
     private String patientName;
-
-    @Column(name = "doctorname")
-    private String doctorname;
-
-    @Column(name = "date")
+    private String doctorName;
     private String date;
+    private Prescription prescription;
 
-
-
-    public Appointment() {
-
+    public Appointment() {}
+    public Appointment(String appointmentID, String patientName, String doctorName, String date, Prescription prescription) {
+        this.appointmentID = appointmentID;
+        this.patientName = patientName;
+        this.doctorName = doctorName;
+        this.date = date;
+        this.prescription = prescription;
     }
 
-    public int getAppointmentID() {
+
+    public Prescription getPrescription() {
+        return prescription;
+    }
+
+    public void setPrescription(Prescription prescription) {
+        this.prescription = prescription;
+    }
+
+
+    public String getAppointmentID() {
         return appointmentID;
     }
 
-    public void setAppointmentID(int appointmentID) {
+    public void setAppointmentID(String appointmentID) {
         this.appointmentID = appointmentID;
     }
 
@@ -40,12 +47,12 @@ public class Appointment {
         this.patientName = patientName;
     }
 
-    public String getDoctorname() {
-        return doctorname;
+    public String getDoctorName() {
+        return doctorName;
     }
 
-    public void setDoctorname(String doctorname) {
-        this.doctorname = doctorname;
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
     }
 
     public String getDate() {

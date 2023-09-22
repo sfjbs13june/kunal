@@ -6,21 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+import java.util.List;
+
+@RestController
 @RequestMapping(value = "/patient")
 public class PatientController {
     @Autowired
     AppointmentRepository appointmentRepository;
 
-    @GetMapping("/myappointment")
-    public @ResponseBody Iterable<Appointment> getMyAppointments(@RequestParam("patientname") final String patientName){
-        return appointmentRepository.findAll();
+    @PostMapping("/save")
+    public Appointment saveAppointment(@RequestBody final Appointment appointment){
+        return appointmentRepository.save(appointment);
     }
 
-    @PostMapping("/save")
-    public @ResponseBody String saveAppointment(@RequestBody final Appointment appointment){
-        appointmentRepository.save(appointment);
-        return "Patient appointment saved";
+    @GetMapping("/myappointments")
+    public List<Appointment> getMyappointments(@RequestParam String patientName){
+        return appointmentRepository.findBypatientName(patientName);
     }
 
 }
